@@ -41,7 +41,7 @@ create table sestra(
         asocijalno bit,
         ekstroventno bit not null,
         dukserica varchar(48) not null,
-        muskarac int not null
+        muskarac int
     );
 
     create table svekar(
@@ -75,7 +75,7 @@ create table sestra(
         ogrlica int not null,
         bojakose varchar(38),
         suknja varchar(36),
-        punac int not null
+        punac int
     );
 
     alter table cura add foreign key (punac) references punac(sifra);
@@ -119,3 +119,29 @@ create table sestra(
     (2,3);
 
     # 2.zadatak
+
+    insert into cura(novcica, gustoca, ogrlica)
+    values 
+    (13.5, 15.88, 6),
+    (17.56, 256.55, 7),
+    (37.89, 98.58, 9);
+
+    update cura set gustoca=15.77;
+
+    # 3.zadatak
+
+    insert into mladic(suknja, kuna, ekstroventno, dukserica)
+    values
+    ('plava', 85.25, 1, 'žuta'),
+    ('zelena', 2.3, 0, 'plava'),
+    ('ljubičasta', 854.5, 0, 'zeleno');
+
+    delete from mladic where kuna >15.78;
+
+    # 4. zadatak
+
+    select kratkamajica from zena where hlace like '%ana%';
+
+    # 5. zadatak
+
+    

@@ -84,3 +84,38 @@ create table sestra(
     alter table mladic add foreign key (muskarac) references muskarac(sifra);
     alter table sestra_svekar add foreign key (sestra) references sestra(sifra);
     alter table sestra_svekar add foreign key (svekar) references svekar(sifra);
+
+    
+    # 1.zadatak
+
+    insert into sestra(haljina, hlace, narukvica)
+    values
+    ('zelena', 'rifle', 22),
+    ('plava', 'kratke', 55),
+    ('ljubičasta', 'žute', 23);
+    
+    insert into zena(kratkamajica, jmbag, bojaociju, sestra)
+    values
+    ('zuta', '12345678910', 'plava', 1),
+    ('bijela', '12345678911', 'zelena', 1),
+    ('crvena', '12345678912', 'crna', 1);
+    
+    insert into muskarac(bojaociju, maraka, zena)
+    values
+    ('zelena', 16.25, 1),
+    ('plava', 15.55, 2),
+    ('crvaena', 89.55, 3);
+
+    insert into svekar(bojaociju)
+    values
+    ('plava'),
+    ('zelena'),
+    ('crna');
+
+    insert into sestra_svekar (sestra, svekar)
+    values
+    (1,1),
+    (2,2),
+    (2,3);
+
+    # 2.zadatak

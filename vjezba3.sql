@@ -101,12 +101,12 @@ values
 (false),
 (false);
 
-insert into brat (ogrlica,ekstroventno) values
+insert into brat (ogrlica, ekstroventno) values
 (15, true),
 (22, false),
 (35, false);
 
-insert into prijatelj_brat(prijatelj,brat) values 
+insert into prijatelj_brat(prijatelj, brat) values 
 (1, 1),
 (2, 2),
 (3, 3);
@@ -119,7 +119,7 @@ values
 (22),
 (33);
 
-insert into svekar(novcica,suknja,narukvica,cura) 
+insert into svekar(novcica, suknja, narukvica, cura) 
 values
 (22.22, 'plava', 1, 1),
 (13.56, 'zelena', 2, 2),
@@ -134,3 +134,22 @@ delete from punica where kratkamajica='AB';
 # 4. zadatak
 
 select majica from ostavljena where lipa!=9 or lipa!=10 or lipa!=20 or lipa!=30 or lipa!=35;
+
+# 5. zadatak
+
+select a.ekstroventno, f.vesta, e.kuna
+    from brat a
+    inner join prijatelj_brat b on b.brat = a.sifra 
+    inner join prijatelj c on c.sifra = b.prijatelj 
+    inner join ostavljena d on d.prijatelj = c.sifra 
+    inner join snasa e on e.ostavljena = d.sifra 
+    inner join punica f on f.snasa = e.sifra 
+    where d.lipa!=91 and c.haljina like '%ba%'
+    order by e.kuna desc;
+
+# 6. zadatak
+
+select a.haljina, a.lipa
+    from prijatelj a
+    left join prijatelj_brat b on b.prijatelj = a.sifra
+    where b.sifra is null;

@@ -143,8 +143,8 @@ create table sestra(
     select kratkamajica from zena where hlace like '%ana%';
 
     # 5. zadatak
-    
-    select a.dukserica,f.asocijalno,e.hlace 
+
+    select a.dukserica, f.asocijalno, e.hlace 
     from svekar a
     inner join sestra_svekar b on b.svekar = a.sifra 
     inner join sestra c on c.sifra = b.sestra 
@@ -156,6 +156,7 @@ create table sestra(
 
     # 6. zadatak
 
-    select a.haljina, a.maraka
-    from sestra a inner join sestra_svekar ss 
-    on a.sifra=ss.sestra where a.sifra not in (select sestra from sestra_svekar);
+    select a.haljina, a.maraka 
+    from sestra a
+    left join sestra_svekar b on b.sestra = a.sifra
+    where b.sifra is null;

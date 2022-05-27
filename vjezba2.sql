@@ -148,7 +148,7 @@ select suknja from cura where drugiputa=null;
 
 # 5. zadatak
 
-select a.novcica,f.neprijatelj,e.haljina 
+select a.novcica, f.neprijatelj, e.haljina 
     from zarucnica a
     inner join decko_zarucnica b on b.zarucnica = a.sifra 
     inner join decko c on c.sifra = b.decko 
@@ -160,7 +160,7 @@ select a.novcica,f.neprijatelj,e.haljina
 
 # 6. zadatak
 
-    select a.vesta ,a.asocijalno 
+    select a.vesta, a.asocijalno 
     from decko a
     left join decko_zarucnica b on b.decko = a.sifra
     where b.sifra is null;

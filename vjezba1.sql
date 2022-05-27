@@ -143,7 +143,6 @@ create table sestra(
     select kratkamajica from zena where hlace like '%ana%';
 
     # 5. zadatak
-
     select a.dukserica,f.asocijalno,e.hlace 
     from svekar a
     inner join sestra_svekar b on b.svekar = a.sifra 

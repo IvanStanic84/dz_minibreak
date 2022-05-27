@@ -142,4 +142,6 @@ values
 
 delete from brat where ogrlica!=14;
 
-4. zadatak
+# 4. zadatak
+
+select suknja from cura where drugiputa=null;

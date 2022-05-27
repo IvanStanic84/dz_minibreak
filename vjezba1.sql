@@ -144,4 +144,18 @@ create table sestra(
 
     # 5. zadatak
 
-    
+    select a.dukserica,f.asocijalno,e.hlace 
+    from svekar a
+    inner join sestra_svekar b on b.svekar = a.sifra 
+    inner join sestra c on c.sifra = b.sestra 
+    inner join zena d on d.sestra = c.sifra 
+    inner join muskarac e on e.zena =d.sifra 
+    inner join mladic f on f.muskarac = e.sifra 
+    where d.hlace like 'a%' and c.haljina like '%ba%'
+    order by e.hlace desc;
+
+    # 6. zadatak
+
+    select a.haljina, a.maraka
+    from sestra a inner join sestra_svekar ss 
+    on a.sifra=ss.sestra where a.sifra not in (select sestra from sestra_svekar);

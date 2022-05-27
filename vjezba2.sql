@@ -74,12 +74,44 @@ create table brat(
 
 alter table prijatelj add foreign key (svekar) references svekar(sifra);
 
-alter table deckozarucnica add foreign key (decko) references decko(sifra);
+alter table decko_zarucnica add foreign key (decko) references decko(sifra);
 
-alter table deckozarucnica add foreign key (zarucnica) references zarucnica(sifra);
+alter table decko_zarucnica add foreign key (zarucnica) references zarucnica(sifra);
 
 alter table cura add foreign key (decko) references decko(sifra);
 
 alter table neprijatelj add foreign key (cura) references cura(sifra);
 
 alter table brat add foreign key (neprijatelj) references neprijatelj(sifra);
+
+# 1. zadatak 
+
+insert into neprijatelj (haljina, modelnaocala, kuna)
+values
+('plava', 'sunčane', 564.25),
+('zelena', 'dioptrijske', 854.69),
+('crvena', 'crne', 44.44);
+
+insert into cura (haljina, drugiputa, majica)
+values 
+('plava', '2022-08-27', 'bijela'),
+('bijela', '2011-08-22', 'ljubičasta'),
+('zelena', '2020-06-28', 'žuta');
+
+insert into decko (asocijalno)
+values 
+(true),
+(false),
+(false);
+
+insert into zarucnica (bojakose, lipa, indiferentno)
+values 
+('crvena', 0.99, true),
+('crna', 0.10, false),
+('plava', 0.55, false);
+
+insert into decko_zarucnica (decko, zarucnica)
+values 
+(1, 1),
+(2, 2),
+(3, 3);

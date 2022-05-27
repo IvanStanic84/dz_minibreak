@@ -115,3 +115,31 @@ values
 (1, 1),
 (2, 2),
 (3, 3);
+
+# 2. zadatak
+
+insert into svekar (ogrlica, asocijalno)
+values 
+(1, true),
+(2, false),
+(3, false);
+
+insert into prijatelj (treciputa, ekstroventno, svekar)
+values 
+('2022-05-27', true, 1),
+('2010-09-22', false, 2),
+('2000-05-14', false, 3);
+
+update prijatelj set treciputa=2020-04-30;
+
+# 3. zadatak
+
+insert into brat (ogrlica, asocijalno, neprijatelj)
+values 
+(1, true, 1),
+(2, false, 1),
+(3, false, 2);
+
+delete from brat where ogrlica!=14;
+
+4. zadatak

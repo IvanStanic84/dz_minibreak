@@ -155,11 +155,12 @@ select a.novcica,f.neprijatelj,e.haljina
     inner join cura d on d.decko = c.sifra 
     inner join neprijatelj e on e.cura =d.sifra 
     inner join brat f on f.neprijatelj = e.sifra 
-    where d.drugiputa like'%%' and c.vesta like '%ba%'
+    where d.drugiputa is not null and c.vesta like '%ba%'
     order by e.haljina desc;
 
 # 6. zadatak
 
-    select a.vesta, a.asocijalno
-    from decko a inner join decko_zarucnica ss 
-    on a.sifra=ss.decko where a.sifra not in (select decko from decko_zarucnica);
+    select a.vesta ,a.asocijalno 
+    from decko a
+    left join decko_zarucnica b on b.decko = a.sifra
+    where b.sifra is null;

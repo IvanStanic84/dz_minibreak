@@ -133,7 +133,7 @@ select a.nausnica, f.jmbag, e.kratkamajica
     where c.lipa!=29 and d.treciputa is null
     order by e.kratkamajica desc;
 
-    # 6. zadatak
+# 6. zadatak
 
 select a.lipa, a.prstena
     from zena a

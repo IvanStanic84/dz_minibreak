@@ -110,3 +110,9 @@ values
 (3, 3);
 
 # 2. zadatak
+
+update punac set majica='Osijek';
+
+# 3. zadatak
+
+delete from prijatelj where prstena>17;

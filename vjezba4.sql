@@ -51,7 +51,7 @@ create table zena(
     sifra int not null primary key auto_increment,
     suknja varchar(39) not null,
     lipa decimal(18,7),
-    prsten int not null
+    prstena int not null
 );
 
 create table mladic(
@@ -79,7 +79,7 @@ alter table zena_mladic add foreign key (mladic) references mladic(sifra);
 
 #1. zadatak
 
-insert into zena (suknja, prsten) 
+insert into zena (suknja, prstena) 
 values
 ('plava', 11),
 ('kratka', 22),
@@ -119,7 +119,7 @@ delete from prijatelj where prstena>17;
 
 # 4. zadatak
 
-select haljina from snasa where treciputa is not null;
+select haljina from snasa where treciputa is null;
 
 # 5. zadatak
 
@@ -130,5 +130,12 @@ select a.nausnica, f.jmbag, e.kratkamajica
     inner join snasa d on d.zena = c.sifra 
     inner join becar e on e.snasa = d.sifra 
     inner join prijatelj f on f.becar = e.sifra 
-    where c.lipa!=29 and d.treciputa=null
+    where c.lipa!=29 and d.treciputa is null
     order by e.kratkamajica desc;
+
+    # 6. zadatak
+
+select a.lipa, a.prstena
+    from zena a
+    left join zena_mladic b on b.zena = a.sifra
+    where b.sifra is null;

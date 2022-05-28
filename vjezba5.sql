@@ -122,3 +122,11 @@ values
 (28, 1),
 (23, 2),
 (19, 3);
+
+# 2. zadatak
+
+update mladic set haljina='Osijek';
+
+# 3. zadatak
+
+delete from ostavljena where ogrlica=17;

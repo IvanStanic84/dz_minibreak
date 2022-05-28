@@ -116,3 +116,10 @@ update punac set majica='Osijek';
 # 3. zadatak
 
 delete from prijatelj where prstena>17;
+
+# 4. zadatak
+
+select haljina from snasa where treciputa is not null;
+
+# 5. zadatak
+

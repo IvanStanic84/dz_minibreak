@@ -78,3 +78,47 @@ alter table punica add foreign key (punac) references punac(sifra);
 alter table punac add foreign key (svekar) references svekar(sifra);
 alter table svekar_cura add foreign key (svekar) references svekar(sifra);
 alter table svekar_cura add foreign key (cura) references cura(sifra);
+
+# 1. zadatak
+
+insert into mladic (kratkamajica, haljina) 
+values
+('plava', 'ljubičasta'),
+('zelena', 'žuta'),
+('bijela', 'crna');
+
+insert into svekar (carape, eura) 
+values
+('crne', 1.11),
+('šarene', 2.22),
+('bijele', 3.32);
+
+insert into cura (carape, maraka) 
+values
+('bijele', 2.22),
+('crne', 4.44),
+('šarene', 6.69);
+
+insert into svekar_cura (svekar, cura) 
+values
+(1, 1),
+(2, 2),
+(3, 3);
+
+insert into punac (prviput, svekar) 
+values
+(2022-05-28, 1),
+(2020-06-28, 2),
+(2000-01-01, 3);
+
+insert into punica(hlace, nausnica, vesta, modelnaocala, treciputa, punac)
+values 
+('plave', 12, 'debela', 'suncane', 2022-05-28, 1),
+('bijele', 24, 'tanka', 'dioptrijske', 2020-06-28, 2),
+('zelene', 18, 'zimska', 'crne', 2000-01-01, 3);
+
+insert into ostavljena (ogrlica, punica) 
+values
+(28, 1),
+(23, 2),
+(19, 3);

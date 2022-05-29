@@ -142,7 +142,7 @@ select a.asocijalno, f.stilfrizura, e.nausnica
     inner join svekar_cura b on b.cura = a.sifra 
     inner join svekar c on c.sifra = b.svekar
     inner join punac d on d.svekar = c.sifra 
-    inner join punica e on e.ostavljena = d.sifra 
+    inner join punica e on e.punac = d.sifra 
     inner join ostavljena f on f.punica = e.sifra 
     where c.majica like '%ba%' and d.prviputa is null
     order by e.nausnica desc;

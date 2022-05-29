@@ -106,7 +106,7 @@ values
 (2),
 (3);
 
-insert into ostavljena (prviputa, kratkamajica)
+insert into ostavljena(prviputa, kratkamajica)
 values 
 (2022-05-13, 'zelena'),
 (2012-05-28, 'crna'),
@@ -117,3 +117,15 @@ values
 (1, 1),
 (2, 2),
 (3, 3);
+
+# 2. zadatak
+
+update svekrva set suknja='Osijek';
+
+# 3. zadatak
+
+delete from decko where modelnaocala<'AB';
+
+# 4. zadatak
+
+select narukvica from brat where treciputa=null;

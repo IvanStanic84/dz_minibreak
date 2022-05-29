@@ -141,3 +141,10 @@ from ostavljena a
     inner join decko f on f.zena = e.sifra 
     where d.treciputa is not null and c.prstena=219
     order by e.narukvica desc;
+
+# 6. zadatak
+
+select a.prstena, a.introvertno
+    from prijatelj a
+    left join prijatelj_ostavljena b on b.prijatelj = a.sifra
+    where b.sifra is null;

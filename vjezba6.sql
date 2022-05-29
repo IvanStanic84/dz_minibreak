@@ -10,7 +10,7 @@ create table punac(
     ekstroventno bit not null,
     suknja varchar(30) not null,
     majica varchar(44) not null,
-    prviput datetime not null
+    prviputa datetime not null
 );
 
 create table svekrva(
@@ -42,7 +42,7 @@ create table ostavljena(
     sifra int not null primary key auto_increment,
     prviputa datetime not null,
     kratkamajica varchar(39) not null,
-    drugiput datetime,
+    drugiputa datetime,
     maraka decimal(14,10)
 );
 
@@ -57,7 +57,7 @@ create table brat(
 
 create table decko(
     sifra int not null primary key auto_increment,
-    prviput datetime,
+    prviputa datetime,
     modelnaocala varchar(41),
     nausnica int,
     zena int not null
@@ -129,3 +129,15 @@ delete from decko where modelnaocala<'AB';
 # 4. zadatak
 
 select narukvica from brat where treciputa=null;
+
+# 5. zadatak
+
+select a.drugiputa, f.zena, e.narukvica
+from ostavljena a
+    inner join prijatelj_ostavljena b on b.ostavljena = a.sifra 
+    inner join prijatelj c on c.sifra = b.prijatelj
+    inner join brat d on d.prijatelj = c.sifra 
+    inner join zena e on e.brat = d.sifra 
+    inner join decko f on f.zena = e.sifra 
+    where d.treciputa is not null and c.prstena=219
+    order by e.narukvica desc;

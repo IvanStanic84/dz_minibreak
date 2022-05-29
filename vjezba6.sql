@@ -40,7 +40,7 @@ create table prijatelj_ostavljena(
 
 create table ostavljena(
     sifra int not null primary key auto_increment,
-    prviput datetime not null,
+    prviputa datetime not null,
     kratkamajica varchar(39) not null,
     drugiput datetime,
     maraka decimal(14,10)
@@ -79,3 +79,41 @@ alter table decko add foreign key (zena) references zena(sifra);
 alter table zena add foreign key (brat) references brat(sifra);
 alter table prijatelj_ostavljena add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijatelj_ostavljena add foreign key (ostavljena) references ostavljena(sifra);
+
+# 1. zadatak
+
+insert into prijatelj(prstena, stilfrizura) 
+values
+(18, 'kovrcava'),
+(20, 'celav'),
+(22, 'kratko');
+
+insert into brat(nausnica, treciputa, narukvica) 
+values
+(22, 2022-05-22, 23),
+(33, 2021-06-28, 24),
+(44, 2020-07-13, 25);
+
+insert into zena (novcica, narukvica, dukserica, brat) 
+values
+(23.23, 25, 'plava', 1),
+(33.33, 77, 'zelena', 2),
+(77.77, 88, 'žuta', 3);
+
+insert into decko(zena) 
+values
+(1),
+(2),
+(3);
+
+insert into ostavljena (prviputa, kratkamajica)
+values 
+(2022-05-13, 'zelena'),
+(2012-05-28, 'crna'),
+(2020-06-22, 'bijela');
+
+insert into prijatelj_ostavljena(prijatelj, ostavljena)
+values
+(1, 1),
+(2, 2),
+(3, 3);

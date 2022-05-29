@@ -42,7 +42,7 @@ create table punica(
 create table punac(
     sifra int not null primary key auto_increment,
     dukserica varchar(33),
-    prviput datetime not null,
+    prviputa datetime not null,
     majica varchar(36),
     svekar int not null
 );
@@ -105,7 +105,7 @@ values
 (2, 2),
 (3, 3);
 
-insert into punac (prviput, svekar) 
+insert into punac (prviputa, svekar) 
 values
 (2022-05-28, 1),
 (2020-06-28, 2),
@@ -133,4 +133,23 @@ delete from ostavljena where ogrlica=17;
 
 # 4. zadatak
 
-select majica from punac where prviput=null;
+select majica from punac where prviputa=null;
+
+# 5. zadatak
+
+select a.asocijalno, f.stilfrizura, e.nausnica
+    from cura a
+    inner join svekar_cura b on b.cura = a.sifra 
+    inner join svekar c on c.sifra = b.svekar
+    inner join punac d on d.svekar = c.sifra 
+    inner join punica e on e.ostavljena = d.sifra 
+    inner join ostavljena f on f.punica = e.sifra 
+    where c.majica like '%ba%' and d.prviputa is null
+    order by e.nausnica desc;
+
+# 6. zadatak
+
+select a.majica, a.carape
+    from svekar a
+    left join svekar_cura b on b.svekar = a.sifra
+    where b.sifra is null;

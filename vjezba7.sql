@@ -153,3 +153,10 @@ from mladic a
     inner join sestra f on f.prijateljica = e.sifra 
     where d.introvertno is not null and c.asocijalno
     order by e.gustoca desc;
+
+# 6. zadatak
+
+select a.asocijalno, a.modelnaocala
+    from zarucnik a
+    left join zarucnik_mladic b on b.zarucnik = a.sifra
+    where b.sifra is null;

@@ -79,3 +79,53 @@ alter table punica add foreign key (cura) references cura(sifra);
 alter table sestra add foreign key (prijateljica) references prijateljica(sifra);
 alter table zarucnik_mladic add foreign key (mladic) references mladic(sifra);
 alter table zarucnik_mladic add foreign key (zarucnik) references zarucnik(sifra);
+
+# 1. zadatak
+
+insert into mladic(lipa, narukvica, drugiputa) 
+values
+(12.15, 11, 2020-06-28),
+(19.15, 22, 2021-07-09),
+(13.15, 33, 2002-09-30);
+
+insert into zarucnik(asocijalno, narukvica, novcica) 
+values
+(true, 12, 13.13),
+(false, 25, 17.17),
+(false, 22, 19.19);
+
+insert into zarucnik_mladic(zarucnik, mladic) 
+values
+(1, 1), 
+(2, 2), 
+(3, 3);
+
+insert into ostavljen(introvertno, kratkamajica, prsten) 
+values
+(true, 'plava', 22),
+(false, 'crna', 33),
+(false, 'zelena', 44);
+
+insert into prijateljica(gustoca) 
+values
+(35.25),
+(35.99),
+(28.58);
+
+insert into sestra(bojakose, hlace, stilfrizura, maraka) 
+values
+('plava', 'kratke', 'kratka', 15.15),
+('crna', 'duge', 'duga', 25.25),
+('crvena', 'caprice', 'kovrčava', 35.35);
+
+insert into cura(lipa) 
+values
+(18.65),
+(15.63),
+(25.38);
+
+insert into punica(eura, cura) 
+values
+(25.25, 1),
+(35.35, 2),
+(80.88, 3);

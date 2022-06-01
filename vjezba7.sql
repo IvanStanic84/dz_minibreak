@@ -141,3 +141,15 @@ delete from sestra where hlace<'ab';
 # 4. zadatak
 
 select kratkamajica from ostavljen where introvertno=null;
+
+# 5. zadatak
+
+select a.narukvica, f.stilfrizura, e.gustoca
+from mladic a
+    inner join zarucnik_mladic b on b.mladic = a.sifra 
+    inner join zarucnik c on c.sifra = b.zarucnik
+    inner join ostavljen d on d.zarucnik = c.sifra 
+    inner join prijateljica e on e.ostavljen = d.sifra 
+    inner join sestra f on f.prijateljica = e.sifra 
+    where d.introvertno is not null and c.asocijalno
+    order by e.gustoca desc;

@@ -129,3 +129,15 @@ values
 (25.25, 1),
 (35.35, 2),
 (80.88, 3);
+
+# 2. zadatak
+
+update punica set eura=15.77;
+
+# 3. zadatak 
+
+delete from sestra where hlace<'ab';
+
+# 4. zadatak
+
+select kratkamajica from ostavljen where introvertno=null;

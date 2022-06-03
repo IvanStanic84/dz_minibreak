@@ -116,4 +116,13 @@ values
 
 # 2. zadatak
 
+update cura set indiferentno=false;
+
+# 3. zadatak
+
+delete from brat where novcica!=12.75;
+
+# 4. zadatak
+
+select prviputa from becar where treciputa is not null;
 

@@ -81,3 +81,39 @@ alter table muskarac_decko add foreign key (decko) references decko(sifra);
 alter table becar add foreign key (muskarac) references muskarac(sifra);
 alter table neprijatelj add foreign key ( becar) references becar(sifra);
 alter table brat add foreign key (neprijatelj) references neprijatelj(sifra);
+
+# 1. zadatak
+
+insert into decko(treciputa, ogrlica, ekstroventno)
+values
+('2022-09-23', 15, false),
+('2021-01-22', 19, true),
+('2020-02-34', 29, true);
+
+insert into muskarac (drugiputa)
+values
+('2022-01-12'),
+('2020-12-21'),
+('2021-03-30');
+
+insert into muskarac_decko(muskarac, decko)
+values
+(1,1),
+(2,2),
+(3,3);
+
+insert into becar (eura, muskarac)
+values
+(13.32, 1),
+(17.23, 2),
+(24.32, 3);
+
+insert into neprijatelj(ogrlica, becar)
+values
+(12, 1),
+(17, 2),
+(18, 3); 
+
+# 2. zadatak
+
+

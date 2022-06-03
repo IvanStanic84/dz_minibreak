@@ -138,7 +138,7 @@ from decko a
 where d.treciputa is not null and c.drugiputa is not null
 order by e.introvertno desc;
 
-# 6. zadatak
+# 6. zadatak 
 
 select a.drugiputa, a.treciputa
 from muskarac a

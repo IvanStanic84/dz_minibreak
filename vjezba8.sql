@@ -126,3 +126,22 @@ delete from brat where novcica!=12.75;
 
 select prviputa from becar where treciputa is not null;
 
+# 5. zadatak
+
+select a.bojakose, f.neprijatelj, e.introvertno
+from decko a
+    inner join muskarac_decko b on b.decko=a.sifra
+    inner join muskarac c on c.sifra=b.muskarac
+    inner join becar d on d.muskarac=c.sifra
+    inner join neprijatelj e on e.becar=d.sifra
+    inner join brat f on f.neprijatelj=e.sifra
+where d.treciputa is not null and c.drugiputa is not null
+order by e.introvertno desc;
+
+# 6. zadatak
+
+select a.drugiputa, a.treciputa
+from muskarac a
+left join muskarac_decko b on b.muskarac=a.sifra
+where b.sifra is null;
+

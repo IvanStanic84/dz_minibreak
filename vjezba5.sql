@@ -133,7 +133,7 @@ delete from ostavljena where ogrlica=17;
 
 # 4. zadatak
 
-select majica from punac where prviputa=null;
+select majica from punac where prviputa is null;
 
 # 5. zadatak
 
@@ -144,7 +144,7 @@ select a.asocijalno, f.stilfrizura, e.nausnica
     inner join punac d on d.svekar = c.sifra 
     inner join punica e on e.punac = d.sifra 
     inner join ostavljena f on f.punica = e.sifra 
-    where c.majica like '%ba%' and d.prviputa is null
+    where c.majica like '%ba%' and d.prviputa is not null
     order by e.nausnica desc;
 
 # 6. zadatak

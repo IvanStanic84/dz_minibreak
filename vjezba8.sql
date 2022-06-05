@@ -124,7 +124,7 @@ delete from brat where novcica!=12.75;
 
 # 4. zadatak
 
-select prviputa from becar where treciputa is not null;
+select prviputa from becar where treciputa is null;
 
 # 5. zadatak
 

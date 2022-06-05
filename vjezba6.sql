@@ -128,7 +128,7 @@ delete from decko where modelnaocala<'AB';
 
 # 4. zadatak
 
-select narukvica from brat where treciputa=null;
+select narukvica from brat where treciputa is null;
 
 # 5. zadatak
 

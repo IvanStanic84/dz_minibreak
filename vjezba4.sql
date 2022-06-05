@@ -130,7 +130,7 @@ select a.nausnica, f.jmbag, e.kratkamajica
     inner join snasa d on d.zena = c.sifra 
     inner join becar e on e.snasa = d.sifra 
     inner join prijatelj f on f.becar = e.sifra 
-    where c.lipa!=29 and d.treciputa is null
+    where c.lipa!=29 and d.treciputa is not null
     order by e.kratkamajica desc;
 
 # 6. zadatak

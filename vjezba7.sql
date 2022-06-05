@@ -140,7 +140,7 @@ delete from sestra where hlace<'ab';
 
 # 4. zadatak
 
-select kratkamajica from ostavljen where introvertno=null;
+select kratkamajica from ostavljen where introvertno is null;
 
 # 5. zadatak
 
@@ -151,7 +151,7 @@ from mladic a
     inner join ostavljen d on d.zarucnik = c.sifra 
     inner join prijateljica e on e.ostavljen = d.sifra 
     inner join sestra f on f.prijateljica = e.sifra 
-    where d.introvertno is not null and c.asocijalno
+    where d.introvertno is not null and c.asocijalno is not null
     order by e.gustoca desc;
 
 # 6. zadatak

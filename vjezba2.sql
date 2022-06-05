@@ -144,7 +144,7 @@ delete from brat where ogrlica!=14;
 
 # 4. zadatak
 
-select suknja from cura where drugiputa=null;
+select suknja from cura where drugiputa is null;
 
 # 5. zadatak
 
